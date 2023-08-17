@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <header className="flex py-8">
-        <div className="flex-none">
+        <div className="grow lg:grow-0">
           <Link href={"#"}>
             <Image
               src={"/static/images/Group 39708.png"}
@@ -15,7 +15,7 @@ export default function Home() {
             />
           </Link>
         </div>
-        <div className="flex-grow pt-6">
+        <div className="flex-grow pt-6 hidden lg:block">
           <ul className="grid grid-flow-col justify-center gap-8 content-end">
             <li className="inline-block">
               <Link href="#">Home</Link>
@@ -34,15 +34,24 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <div className="flex-none pt-2">
+        <div className="pt-2">
           <button className="bg-primary px-6 py-2 rounded-full text-white">
             Connect
           </button>
         </div>
+        <div className="flex flex-col justify-center ml-4 lg:hidden">
+          <Image
+            className="w-8 cursor-pointer"
+            src={"/static/images/menu.png"}
+            width={100}
+            height={100}
+            alt="Menu"
+          />
+        </div>
       </header>
       <section className="bg-banner rounded-xl mx-auto mb-24">
-        <div className="grid place-content-center py-24">
-          <div className="flex flex-col items-center">
+        <div className="flex place-content-center py-20">
+          <div className="flex flex-col items-center max-w-full px-4">
             <div className="text-4xl font-bold text-center text-white mb-4">
               TRAVEL TO EXPLORE
             </div>
@@ -51,23 +60,23 @@ export default function Home() {
               Eiusmod Tempor Incididunt Ut Labore Pretium Nibh Ipsum. Risus Sed
               Vulputate Odio Ut
             </p>
-            <div className="flex bg-white shadow rounded-lg py-2 px-4 justify-between gap-4 mt-8 items-center">
-              <div className="p-2">
+            <div className="flex flex-col md:flex-row max-w-full bg-white shadow rounded-lg py-4 px-6 gap-4 mt-8 md:items-center">
+              <div className="md:w-1/4">
                 <h4 className="font-semibold">Where You Want to go</h4>
                 <input
                   className="placeholder:text-sm"
                   placeholder="Search your location"
                 />
               </div>
-              <div className="border-l pl-8">
+              <div className="md:border-l md:pl-8 md:w-1/4">
                 <h4 className="font-semibold">Check In</h4>
                 <input className="placeholder:text-sm" placeholder="Add Date" />
               </div>
-              <div className="border-l pl-8">
+              <div className="md:border-l md:pl-8 md:w-1/4">
                 <h4 className="font-semibold">Check Out</h4>
                 <input className="placeholder:text-sm" placeholder="Add Date" />
               </div>
-              <div>
+              <div className="md:w-1/4 md:text-right">
                 <button className="bg-primary px-6 py-4 rounded text-white">
                   Explore Now
                 </button>
@@ -76,7 +85,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-4 gap-12 mb-24">
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
         <div className="border shadow shadow-blue-100 rounded-lg flex flex-col p-4 cursor-pointer">
           <div className="grid w-24 h-24 bg-blue-50 rounded-lg mb-2 place-content-center">
             <Image
@@ -143,7 +152,7 @@ export default function Home() {
           Recommended Destination
         </h1>
         <div>
-          <div className="flex mx-auto w-fit text-xl font-semibold justify-center gap-16 mb-10 border-b">
+          <div className="flex max-w-full mx-auto w-fit text-xl font-semibold justify-center gap-1 md:gap-16 mb-10 border-b">
             <div className="pb-2 cursor-pointer border-b-4 border-black">
               The Weekend Break
             </div>
@@ -152,7 +161,7 @@ export default function Home() {
             <div className="pb-2 cursor-pointer">Long Term Slow Travel</div>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           <div className="cursor-pointer">
             <Image
               src={"/static/images/Singapore.png"}
@@ -475,37 +484,19 @@ export default function Home() {
       </section>
       <section className="py-20 px-12">
         <h1 className="text-center text-4xl font-bold mb-12">Blogs</h1>
-        <div className="grid grid-cols-7 gap-4">
-          <div className="col-span-4 row-span-2 p-2 relative cursor-pointer">
-            <Image
-              src={"/static/images/luca-micheli-ruWkmt3nU58-unsplash.png"}
-              width={960}
-              height={580}
-              alt=""
-            />
-            <h1 className="text-2xl font-bold text-white absolute top-[40%] left-[20%] w-[60%] text-center">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col justify-center row-span-2 rounded-xl cursor-pointer bg-cover bg-[url('/static/images/luca-micheli-ruWkmt3nU58-unsplash.png')]">
+            <h1 className="text-xl md:text-2xl font-bold text-white text-center">
               The Ultimate Guide to Climbing Mount Kilimanjaro
             </h1>
           </div>
-          <div className="col-span-3 relative cursor-pointer">
-            <Image
-              src={"/static/images/eva-darron-oCdVtGFeDC0-unsplash.png"}
-              width={800}
-              height={300}
-              alt=""
-            />
-            <h1 className="text-xl font-bold text-white absolute top-[40%] left-[20%] w-[60%] text-center">
+          <div className="flex flex-col justify-center rounded-xl cursor-pointer aspect-[3/1] bg-cover bg-[url('/static/images/eva-darron-oCdVtGFeDC0-unsplash.png')]">
+            <h1 className="text-lg md:text-xl font-bold text-white text-center">
               12 Things I'd Tell Any New Traveler
             </h1>
           </div>
-          <div className="col-span-3 relative cursor-pointer">
-            <Image
-              src={"/static/images/ibrahim-rifath-Y6tBl0pTe-g-unsplash.png"}
-              width={800}
-              height={300}
-              alt=""
-            />
-            <h1 className="text-xl font-bold text-white absolute top-[40%] left-[20%] w-[60%] text-center">
+          <div className="flex flex-col justify-center rounded-xl cursor-pointer aspect-[3/1] bg-cover bg-[url('/static/images/ibrahim-rifath-Y6tBl0pTe-g-unsplash.png')]">
+            <h1 className="text-lg md:text-xl font-bold text-white text-center">
               The Ultimate Packing List for Female Travelers
             </h1>
           </div>
@@ -515,9 +506,9 @@ export default function Home() {
         <h1 className="text-center text-4xl font-bold mb-12">
           Happy Customers
         </h1>
-        <div className="grid grid-cols-2 gap-16 pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-4">
           <div className="bg-white rounded-lg p-4">
-            <div className="italic">
+            <div className="italic text-justify">
               &ldquo; Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Ultricies mi eget mauris pharetra. Amet risus nullam eget felis
@@ -541,7 +532,55 @@ export default function Home() {
             </div>
           </div>
           <div className="bg-white rounded-lg p-4">
-            <div className="italic">
+            <div className="italic text-justify">
+              &ldquo; Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ultricies mi eget mauris pharetra. Amet risus nullam eget felis
+              eget nunc lobortis. Purus in massa tempor nec. Porta nibh
+              venenatis cras sed.
+            </div>
+            <div className="flex pt-8 pb-4">
+              <div className="w-16 h-16">
+                <Image
+                  src={"/static/images/avatar.png"}
+                  width={100}
+                  height={100}
+                  alt="Avatar"
+                  className=" rounded-full"
+                />
+              </div>
+              <div className="flex flex-col pl-4 justify-center">
+                <div className="font-semibold">Shalini Singh</div>
+                <div className="text-gray-500">Project Manager</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-4">
+            <div className="italic text-justify">
+              &ldquo; Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ultricies mi eget mauris pharetra. Amet risus nullam eget felis
+              eget nunc lobortis. Purus in massa tempor nec. Porta nibh
+              venenatis cras sed.
+            </div>
+            <div className="flex pt-8 pb-4">
+              <div className="w-16 h-16">
+                <Image
+                  src={"/static/images/avatar.png"}
+                  width={100}
+                  height={100}
+                  alt="Avatar"
+                  className=" rounded-full"
+                />
+              </div>
+              <div className="flex flex-col pl-4 justify-center">
+                <div className="font-semibold">Shalini Singh</div>
+                <div className="text-gray-500">Project Manager</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-4">
+            <div className="italic text-justify">
               &ldquo; Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Ultricies mi eget mauris pharetra. Amet risus nullam eget felis
@@ -567,10 +606,10 @@ export default function Home() {
         </div>
       </section>
       <section className="py-20 px-12">
-        <div className="bg-blue-100 rounded-lg px-4 h-28 flex justify-between items-center">
+        <div className="bg-blue-100 rounded-lg px-4 py-4 flex justify-between items-center gap-4">
           <div>Copyright © 2020 Travelo. All rights reserved</div>
           <div className="flex-grow">
-            <ul className="grid grid-flow-col justify-center gap-8 content-end">
+            <ul className="grid grid-flow-row md:grid-flow-col justify-center md:gap-8 content-end">
               <li className="inline-block">
                 <Link href="#">Home</Link>
               </li>
